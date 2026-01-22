@@ -1,5 +1,3 @@
-%md
-%undefined
 # Databricks Workspace Setup for Data Engineering Operations
 
 ## Purpose
@@ -61,4 +59,4 @@ For questions, issues, or contributions, please contact the Data Engineering tea
 
 ---
 
-**Note:** This notebook contains executable code examples. Review and test in a development environment before applying to staging or production.
+**Note:** This Repo contains executable code examples. Review and test in a development environment before applying to staging or production.
