@@ -1,4 +1,4 @@
-## 7. Best Practices & Recommendations
+# Best Practices & Recommendations
 
 ### Catalog Management
 
