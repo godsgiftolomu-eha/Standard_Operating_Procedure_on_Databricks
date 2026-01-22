@@ -243,7 +243,7 @@ Cluster governance ensures all policies are enforced automatically, reducing man
   - Terminate oversized clusters.
   - Flag anomalies to Slack/Email.
 
-### ✅ Cluster Policies Checklist
+### Cluster Policies Checklist
 | Requirement                         | Dev           | QA            | Prod        |
 |------------------------------------|---------------|---------------|-------------|
 | T-shirt sizes enforced             | ✔️            | ✔️            | ✔️          |
