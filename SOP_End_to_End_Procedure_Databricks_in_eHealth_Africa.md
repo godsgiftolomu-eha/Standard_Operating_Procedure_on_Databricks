@@ -170,7 +170,7 @@ Standardizing cluster sizes ensures workloads are right-sized, reducing unnecess
 | GPU         | ML/DL training              | Neural networks, image analysis                     | Governance approval required    |
 
 
-🔒 Rule: Any cluster outside these predefined sizes must be rejected automatically.
+**Rule:** Any cluster outside these predefined sizes must be rejected automatically.
 
 ### 1.2.2 Auto-Termination
 
@@ -260,14 +260,11 @@ Unity Catalog (UC) serves as the central governance layer for data, models, and 
 
 ### 1.3.1 Standards & Requirements
 
-- Registration:
-
-Centralized registration in Unity Catalog establishes a single source of truth for all assets - datasets, ML models, notebooks, and dashboards. This prevents data silos and shadow IT, making assets discoverable, reusable, and easier to govern. Linking each asset to a catalog → schema → table/model hierarchy enforces standardization and reduces confusion when promoting assets across Dev, QA, and Prod.
+- Registration: Centralized registration in Unity Catalog establishes a single source of truth for all assets - datasets, ML models, notebooks, and dashboards. This prevents data silos and shadow IT, making assets discoverable, reusable, and easier to govern. Linking each asset to a catalog → schema → table/model hierarchy enforces standardization and reduces confusion when promoting assets across Dev, QA, and Prod.
 
 - All datasets, ML models, notebooks, and dashboards must be registered in Unity Catalog.
 - Each asset must be linked to its appropriate catalog, schema, and table/model class.
 - Ownership & Stewardship:
-
 Clearly defined ownership and stewardship ensures accountability. Each asset must have designated roles:
 
 - Owner (responsible for asset lifecycle),
@@ -278,15 +275,11 @@ Ownership metadata links assets back to responsible teams and departments, reduc
 
 - Every asset must have assigned Owner, Steward, and Consumer roles documented.
 - Ownership metadata is mandatory and should include department, data steward, and business contact.
-- Data Classification & Sensitivity:  
-
-Proper classification and protection of sensitive data (e.g., PII, PHI, financial data) is a regulatory requirement (HIPAA, GDPR, NDPR). Applying classification labels improves transparency, enforces masking/tokenization policies, and enables automated alerts for misuse. Labels also drive downstream access controls and help distinguish between assets safe for public reporting and those restricted to internal use only.
+- Data Classification & Sensitivity:   Proper classification and protection of sensitive data (e.g., PII, PHI, financial data) is a regulatory requirement (HIPAA, GDPR, NDPR). Applying classification labels improves transparency, enforces masking/tokenization policies, and enables automated alerts for misuse. Labels also drive downstream access controls and help distinguish between assets safe for public reporting and those restricted to internal use only.
 
 - Sensitive fields must be masked, hashed, or tokenized before being made accessible.
 - Classification labels (Public, Internal, Confidential, Restricted) must be applied to each dataset.
-- Lineage & Transparency:
-
-Data lineage provides end-to-end visibility of how data flows across systems - critical for trust, compliance, and debugging. Automated lineage in UC ensures every transformation, dataset, and model has traceable inputs and outputs. Regular review ensures lineage remains accurate, especially when systems or pipelines change.
+- Lineage & Transparency: Data lineage provides end-to-end visibility of how data flows across systems - critical for trust, compliance, and debugging. Automated lineage in UC ensures every transformation, dataset, and model has traceable inputs and outputs. Regular review ensures lineage remains accurate, especially when systems or pipelines change.
 
 - Automated lineage tracking is enabled for all assets.
 - Lineage metadata must be reviewed quarterly for accuracy and compliance.
@@ -405,8 +398,7 @@ Maintaining high code quality reduces technical debt and ensures reliability of 
   - ML Models: Must be validated against held-out test datasets with performance metrics (accuracy, precision, recall, F1-score) logged.
   - Regression Testing: Ensures changes do not break existing functionality.  
 
-- Linting/Style Checks:  
-    This process enforces high standards, making sure code is secure, maintainable, and consistent across team
+- Linting/Style Checks: This process enforces high standards, making sure code is secure, maintainable, and consistent across team
   - Automated linting tools (e.g., flake8, black, pylint for Python; SQLFluff for SQL) must be run as part of the CI pipeline.
   - Style checks enforce consistent coding practices, improving readability and maintainability.  
 
@@ -441,8 +433,7 @@ Pipelines must follow consistent triggers and validation steps to enforce reliab
   - Executes unit tests, integration tests, linting, and security scans (e.g., dependency vulnerability scanning).
   - Blocks merge if tests fail or vulnerabilities are detected.  
 
-- CD Pipeline:  
-    Standardizing pipelines ensures consistent quality control and reduces risk of faulty releases reaching production.
+- CD Pipeline: Standardizing pipelines ensures consistent quality control and reduces risk of faulty releases reaching production.
   - Triggered on approved merges to main.
   - Automates deployment to production Databricks workspace.
   - Includes smoke tests to validate the success of deployments (e.g., running a small subset of a pipeline or verifying job execution).
@@ -493,14 +484,12 @@ Data engineering in Databricks forms the backbone of reliable analytics and mach
 
 ### 1.6.1 Data Flow
 
-- Bronze (Raw Zone - Ingest)  
-    The Bronze layer captures raw, source-of-truth data in its most native form. Minimal transformations occur here to preserve replayability and traceability, enabling recovery in case of upstream errors or changes.  
+- Bronze (Raw Zone - Ingest): The Bronze layer captures raw, source-of-truth data in its most native form. Minimal transformations occur here to preserve replayability and traceability, enabling recovery in case of upstream errors or changes.  
   - Importance: Storing immutable Delta tables with ingestion timestamps and metadata ensures auditability.  
 
   - Discussion: Bronze tables act as the "single source of truth" for historical data, providing a foundation for all downstream transformations. They allow teams to reprocess data if schema changes or anomalies occur, reducing risk of data loss or corruption.  
 
-- Silver (Validated Zone - Clean)  
-    The Silver layer enforces trustworthiness, standardization, and interoperability. Here, raw data is cleaned, validated, and structured according to organizational schema and business rules.  
+- Silver (Validated Zone - Clean): The Silver layer enforces trustworthiness, standardization, and interoperability. Here, raw data is cleaned, validated, and structured according to organizational schema and business rules.  
   - Schema Validation: Prevents accidental schema drift and ensures consistency for analytics and ML.  
 
   - Data Quality Checks: Completeness, uniqueness, value ranges, and referential integrity guarantee the dataset is reliable for decision-making.  
@@ -509,8 +498,7 @@ Data engineering in Databricks forms the backbone of reliable analytics and mach
 
   - Discussion: The Silver layer is crucial for building confidence in data pipelines. It standardizes data for downstream applications and ensures compliance with internal policies, regulations, and privacy standards. Without this layer, analytics and ML outputs risk being inconsistent, biased, or erroneous.  
 
-- Gold (Curated / Analytics & ML-ready Zone)  
-    The Gold layer delivers business-ready, optimized datasets for analytics, dashboards, and ML pipelines.  
+- Gold (Curated / Analytics & ML-ready Zone): The Gold layer delivers business-ready, optimized datasets for analytics, dashboards, and ML pipelines.  
   - Transformations & Standardization: Business rules and reference data are applied to ensure consistency across reports and models.  
 
   - Performance Optimizations: Partitioning, clustering, and materialized aggregates improve query performance, especially on large datasets.  

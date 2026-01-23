@@ -45,23 +45,25 @@ This SOP applies to all data synchronization activities within the Databricks en
     This optimized storage layer that adds ACID transactions, versioning, and schema enforcement to data stored in data lakes. Tables stored can be retrieved through the catalog
 
     ![alt text](image.png)
+    ```python
+    # How to write data from data sources into Delta lake
+    df.write.format("delta").mode("overwrite").save("/mnt/mydata/delta/my_table")
 
-    - How to write data from data sources into Delta lake
-    _df.write.format("delta").mode("overwrite").save("/mnt/mydata/delta/my_table")_
-    - How to Read Delta lake table spark.read.forma
-    _("delta").load("/mnt/mydata/delta/my_table")_
-
+    # How to Read Delta lake table spark.read.forma
+    ("delta").load("/mnt/mydata/delta/my_table")
+   ```
     **DBFS (Databricks File System)**
 
     DBFS is an abstraction layer on top of cloud object storage, Lets you interact with storage using Unix-like paths (/dbfs/...) or mount points (/mnt/...). Files like shapefiles, CSV, Excel, Json etc can be uploaded using the DBFS UI on Databricks.
 
     ![alt text](image-1.png)
+    ```python
+    # How to Save a DataFrame as CSV
+    df.write.csv("/dbfs/tmp/mydata.csv")
 
-    - How to Save a DataFrame as CSV
-    _df.write.csv("/dbfs/tmp/mydata.csv")_
-
-    - How to Read back the saved file
-    _df2 = spark.read.csv("/dbfs/tmp/mydata.csv")_
+    # How to Read back the saved file
+    df2 = spark.read.csv("/dbfs/tmp/mydata.csv")
+    ```
 
 **External data Storage**
 

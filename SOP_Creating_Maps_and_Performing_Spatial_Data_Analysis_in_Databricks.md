@@ -125,7 +125,7 @@ gdf_tracks_buffered = gdf_tracks.copy()
 
 gdf_tracks_buffered['geometry'] = gdf_tracks.geometry.buffer(buffer_degrees)
 ```
-![alt text](image-37.png)
+![alt text](image-40.png)
 
 _Note:_ For accurate buffering, project data to an appropriate projected CRS before buffering:
 
