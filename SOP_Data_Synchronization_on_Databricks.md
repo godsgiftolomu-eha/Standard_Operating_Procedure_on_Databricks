@@ -1,6 +1,6 @@
 # **Standard Operating Procedure (SOP) for Data Synchronization on Databricks**
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 # **Objective:**
 
@@ -36,7 +36,7 @@ This SOP applies to all data synchronization activities within the Databricks en
 
 - Data Sources: Identify the data sources (e.g., databases, APIs, cloud storage) from which the data will be extracted.
 
-    ![alt text](image-12.png)  
+    ![alt text](images/image-12.png)  
 
 2. Data Targets: For data Synchronization or migration, there must be a target in this case Databricks where data will be stored after synchronization including:
 
@@ -44,7 +44,7 @@ This SOP applies to all data synchronization activities within the Databricks en
 
     This optimized storage layer that adds ACID transactions, versioning, and schema enforcement to data stored in data lakes. Tables stored can be retrieved through the catalog
 
-    ![alt text](image.png)
+    ![alt text](images/image.png)
     ```python
     # How to write data from data sources into Delta lake
     df.write.format("delta").mode("overwrite").save("/mnt/mydata/delta/my_table")
@@ -56,7 +56,7 @@ This SOP applies to all data synchronization activities within the Databricks en
 
     DBFS is an abstraction layer on top of cloud object storage, Lets you interact with storage using Unix-like paths (/dbfs/...) or mount points (/mnt/...). Files like shapefiles, CSV, Excel, Json etc can be uploaded using the DBFS UI on Databricks.
 
-    ![alt text](image-1.png)
+    ![alt text](images/image-1.png)
     ```python
     # How to Save a DataFrame as CSV
     df.write.csv("/dbfs/tmp/mydata.csv")
@@ -84,20 +84,20 @@ As a data Analyst/Engineer Efficient and resilient data extraction is essential 
 
     Go to workspace → Click create → click Notebook
 
-    ![alt text](Picture1.png)
+    ![alt text](images/Picture1.png)
 
     In the New Notebook → Rename your Notebook → Type in your code → click connect → select Compute/cluster you want to use and start running code sell one after the other or run all
 
-    ![alt text](Picture2.png)
+    ![alt text](images/Picture2.png)
 
     Then Set up extraction jobs to run the Databricks Notebooks to pull data from source systems.
 
     Databricks Job
-    ![alt text](image-2.png)
+    ![alt text](images/image-2.png)
 
 2.  Incremental Data Extraction: Implement incremental extraction by comparing timestamps or other unique identifiers to ensure only new or updated records are pulled.
 
-    ![alt text](image-13.png)
+    ![alt text](images/image-13.png)
     ``To be Triggered by Jobs``
 
     - Error Handling: Define error handling mechanisms for failed extraction jobs, such as logging errors and retrying the operation after a set interval.  
@@ -105,13 +105,16 @@ As a data Analyst/Engineer Efficient and resilient data extraction is essential 
 #### 3\. Data Transformation
 
 1. Data Preprocessing: Use Databricks notebooks to perform necessary transformations, such as data cleaning, normalization, or enrichment.  
-    ![alt text](image-14.png)
+
+    ![alt text](images/image-14.png)
+
 2. Data Validation: Validate data during transformation to ensure completeness, accuracy, and consistency before loading it into the target system.
 
-    ![alt text](image-15.png)
+    ![alt text](images/image-15.png)
 
 3. Delta Lake Optimizations: If using Delta Lake, use the ``MERGE``operation to ensure that updates and deletes are accurately reflected in the target.
-    ![alt text](image-16.png)
+
+    ![alt text](images/image-16.png)
 
 #### 4\. Data Loading
 
@@ -119,21 +122,25 @@ Date Loading comes after the data is transformed and validated. Data is loaded e
 
 1. Load Data into Target: Using Databricks jobs or notebooks the transformed data can be loaded into the target system such as delta tabe
 
-    ![alt text](image-17.png)
+    ![alt text](images/image-17.png)
 
 2. Partitioning Data: For large datasets, partition data by relevant columns (e.g., date, region) to optimize query performance.  
-    ![alt text](image-18.png)  
+
+    ![alt text](images/image-18.png)  
 
 #### 5\. Data Monitoring and Logging
 
 1. Job Monitoring: Use Databricks job dashboards to monitor the execution of data synchronization jobs.
-![alt text](Picture3.png)
+
+    ![alt text](images/Picture3.png)
 
 2. Error Logs: Set up centralized logging for all data synchronization jobs using Databricks' built-in logging capabilities (e.g., CloudWatch, Azure Monitor).
-![alt text](Picture4.png)
+
+    ![alt text](images/Picture4.png)
 
 3. Alerting: Alert can be configured as email for job failures or performance issues to quickly address any problems with synchronization.  
-![alt text](image-3.png)
+
+    ![alt text](images/image-3.png)
 
 # Security and Compliance  
 
@@ -155,16 +162,16 @@ Date Loading comes after the data is transformed and validated. Data is loaded e
 ### Prepare Your Data
 
 → Choose or create a **SQL Warehouse**
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 → Go to Dashboards tab
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 → Add Queries to Dashboard
-![alt text](Picture5.png)
+![alt text](images/Picture5.png)
 
 → Share or Schedule
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 # **Conclusion:**
 

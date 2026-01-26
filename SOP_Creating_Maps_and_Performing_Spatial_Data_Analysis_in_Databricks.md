@@ -1,6 +1,6 @@
 # **SOP: Creating Maps and Performing Spatial Data Analysis in Databricks**
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ## **1\. Overview**
 
@@ -40,10 +40,11 @@ dbutils.library.restartPython()
 ## **3\. Data Preparation**
 
 **3.1 Ingesting Shapefile into DBFS**
-![alt text](image-8.png)
+
+![alt text](images/image-8.png)
 
 **3.2 Ingesting Shapefile in Unity catalog Volume**
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 ### **3.3 Copy Shapefiles from DBFS to Local Workspace**
 
@@ -95,7 +96,7 @@ ax.add_artist(scalebar)
 
 Create custom legend handles if needed for clarity.
 
-![alt text](image-36.png)
+![alt text](images/image-36.png)
 
 ## **6\. Spatial Data Analysis**
 
@@ -110,7 +111,7 @@ settlements_path = "/Volumes/eha/default/neoc_data/April OBR Planned Settlements
 
 gdf_settlements = gpd.read_file(settlements_path)
 ```
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 ### **6.2 Buffer Operation on Tracks**
 
@@ -125,7 +126,7 @@ gdf_tracks_buffered = gdf_tracks.copy()
 
 gdf_tracks_buffered['geometry'] = gdf_tracks.geometry.buffer(buffer_degrees)
 ```
-![alt text](image-40.png)
+![alt text](images/image-40.png)
 
 _Note:_ For accurate buffering, project data to an appropriate projected CRS before buffering:
 
@@ -146,7 +147,7 @@ Determine which planned settlements fall within buffered tracks:
 ```python
 gdf_settlements['visited'] = gdf_settlements.geometry.intersects(gdf_tracks_buffered.unary_union)
 ```
-![alt text](image-38.png)
+![alt text](images/image-38.png)
 
 ### **6.4 View and Summarize Results**
 
@@ -171,8 +172,7 @@ plt.ylabel("Count")
 plt.show()
 
 ```
-
-![alt text](image-39.png)
+![alt text](images/image-39.png)
 
 ## **7\. References**
 

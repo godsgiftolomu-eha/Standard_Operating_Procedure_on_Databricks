@@ -1,6 +1,6 @@
 # SOP: Data Management - Data Modeling and Schema Design for Cholera Analytics
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 ### **Objective**
 
@@ -110,7 +110,7 @@ This covers the schema design and data modeling of cholera outbreak data and ass
 
 - Store ingested data in a raw or bronze table in Databricks.
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 2.2 **Cholera Data Ingestion**
 
@@ -119,14 +119,14 @@ This covers the schema design and data modeling of cholera outbreak data and ass
 
 - Store cholera data in a raw or bronze table in Databricks.
 
-    ![alt text](image-21.png)
-    ![alt text](image-22.png)
+    ![alt text](images/image-21.png)
+    ![alt text](images/image-22.png)
 
 2.3 **Automation**
 
 - Create and schedule Databricks Jobs to run daily ingestion pipelines for both data sources.
 
-    ![alt text](image-23.png)
+    ![alt text](images/image-23.png)
 
 #### **3\. Data Integration and Modeling**
 
@@ -198,7 +198,7 @@ def cholera_climatic_prefixed():
 
     return joined_df
 ```
-![alt text](image-24.png)
+![alt text](images/image-24.png)
 
 - Consider adding temporal join criteria based on timestamp and date_of_onset for time-series correlation.  
 

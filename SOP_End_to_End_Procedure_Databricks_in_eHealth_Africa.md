@@ -1,6 +1,6 @@
 # **End to End Standard Operating Procedure (SOP) on Databricks in eHealth Africa**
 
-![alt text](image-26.png)
+![alt text](images/image-26.png)
 
 # Purpose / Objective
 
@@ -61,7 +61,7 @@ Compute resources must follow standardized policies to optimize both cost and pe
 
 To establish and maintain separate, well-governed environments **(Dev, QA, Prod)** in Databricks, ensuring controlled data flow, security, and reproducibility across the data lifecycle.
 
-![alt text](image-27.png)
+![alt text](images/image-27.png)
 
 ### 1.1.1 Environment Separation
 
@@ -155,10 +155,10 @@ To enforce standardized rules and configurations for cluster creation, usage, an
 - Security (restricted access, tagging, and governance).
 - Compliance with FinOps and governance policies.
   
-  ![alt text](image-28.png)
-### 1.2.1 T-Shirt Sizing
+  ![alt text](images/image-28.png)
 
-![alt text](image-29.png)
+### 1.2.1 T-Shirt Sizing
+![alt text](images/image-29.png)
 
 Standardizing cluster sizes ensures workloads are right-sized, reducing unnecessary costs and improving predictability. T-shirt sizing (Small, Medium, Large, GPU) aligns cluster provisioning with workload types, making it easy for engineers to select appropriate resources while preventing over-provisioning. Clusters outside these sizes introduce cost and governance risks and must be automatically rejected by policies.
 
@@ -364,7 +364,7 @@ Security is not only about best practice - it must align with organizational ISM
 
 Continuous Integration and Continuous Deployment (CI/CD) ensures reliable, auditable, and automated delivery of Databricks assets, reducing deployment risks and enforcing quality standards. A well-structured CI/CD process provides consistency across environments, enforces security and compliance, and improves developer productivity by automating repetitive tasks.
 
-![alt text](image-30.png)
+![alt text](images/image-30.png)
 
 ### 1.5.1 Source Control Integration
 
@@ -480,7 +480,7 @@ Visibility and resilience are key to maintaining trust in deployed systems.
 
 Data engineering in Databricks forms the backbone of reliable analytics and machine learning workflows. Following the medallion architecture (Bronze → Silver → Gold) ensures that data flows are structured, auditable, and fit for purpose. Each layer serves a distinct role in maintaining traceability, quality, and usability of datasets across the organization.
 
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 ### 1.6.1 Data Flow
 
@@ -525,7 +525,7 @@ Data engineering in Databricks forms the backbone of reliable analytics and mach
 
 MLOps in Databricks is a structured approach to operationalizing machine learning workflows, ensuring that models move seamlessly from experimentation to production while maintaining security, reproducibility, and compliance. The integration of MLOps ensures that model development is not isolated but part of a full data-to-deployment lifecycle, which is critical for mission-critical applications like public health analytics or predictive modeling in eHealth Africa.
 
-![alt text](image-32.png)
+![alt text](images/image-32.png)
 
 ### 1.7.1 Core Principles
 
@@ -615,7 +615,7 @@ Monitoring and observability in Databricks are essential to ensure that data pip
 
 Cost optimization in Databricks ensures that computational resources are used efficiently, budgets are respected, and unnecessary spend is minimized without compromising performance, reliability, or SLAs. By combining tagging, autoscaling, instance selection, and FinOps governance, organizations can maintain visibility into cloud spend and enforce accountability.
 
-![alt text](image-33.png)
+![alt text](images/image-33.png)
 
 ### 1.9.1 Tag-Based Cost Allocation
 
@@ -670,7 +670,7 @@ Cost optimization in Databricks ensures that computational resources are used ef
 
 # 2\. Monitoring, Alerting & Cost Control
 
-![alt text](image-34.png)
+![alt text](images/image-34.png)
 
 ## 2.1 Native Tools
 
@@ -713,7 +713,7 @@ Databricks offers a comprehensive suite of native tools designed to provide visi
 
 Financial Operations (FinOps) practices in Databricks are designed to ensure cost transparency, accountability, and efficiency. For eHealth Africa, these practices enable teams to manage cloud spend proactively while maintaining performance and operational reliability. FinOps integrates financial oversight directly into data engineering and ML workflows, aligning technical operations with budgetary and strategic goals.
 
-![alt text](image-35.png)
+![alt text](images/image-35.png)
 
 ### 2.2.1 Phased Cost Maturity Model
 
