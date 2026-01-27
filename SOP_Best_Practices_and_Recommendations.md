@@ -4,24 +4,26 @@
 ### Catalog Management
 
 **Do:**
-* Use environment-based catalog for clear separation
-* Apply consistent naming conventions across all catalogs
+* Use project-based catalogs (one catalog per project) for clear ownership and isolation
+* Apply consistent naming conventions: `{project_name}_catalog`
 * Document catalog purpose and ownership in comments
 * Regularly review and clean up unused catalogs
+* Maintain standardized schema structure (bronze/silver/gold) across all project catalogs
 
 **Don't:**
-* Create catalogs without clear ownership and purpose
-* Mix development and production data in same catalog
+* Create catalogs without clear project association and purpose
+* Mix multiple projects in same catalog
 * Grant broad permissions at catalog level unnecessarily
 * Leave catalogs without proper documentation
 
 ### Schema Organization
 
 **Do:**
-* Follow medallion architecture (bronze → silver → gold)
+* Follow medallion architecture (bronze → silver → gold) in every project catalog
 * Use schemas to organize by data quality tier
 * Add descriptive comments to all schemas
 * Set schema-level properties for governance metadata
+* Maintain consistent schema structure across all project catalogs
 
 **Don't:**
 * Create flat schema structures without organization
@@ -32,17 +34,19 @@
 ### Access Control
 
 **Do:**
-* Implement role-based access control (RBAC)
+* Implement role-based access control (RBAC) per project catalog
 * Follow principle of least privilege
 * Grant permissions at schema level when possible
-* Regularly audit and review permissions
+* Regularly audit and review permissions per project
 * Document access request and approval process
+* Consider cross-project access needs carefully
 
 **Don't:**
 * Grant ALL PRIVILEGES unless absolutely necessary
 * Give production write access to business users
 * Share credentials or use service accounts for individuals
 * Skip permission audits
+* Grant unnecessary cross-project access
 
 ### Table Standards
 
@@ -92,11 +96,12 @@
 ### Monitoring & Compliance
 
 **Do:**
-* Set up automated monitoring and alerting
+* Set up automated monitoring and alerting per project catalog
 * Track governance metrics over time
-* Conduct regular compliance audits
+* Conduct regular compliance audits across all projects
 * Document and remediate violations promptly
 * Share governance reports with stakeholders
+* Monitor cross-project governance consistency
 
 **Don't:**
 * Rely on manual monitoring only
@@ -110,11 +115,27 @@
 * Provide clear documentation and examples
 * Offer training and onboarding for new team members
 * Create self-service tools and templates
-* Establish governance champions in each team
+* Establish governance champions in each project team
 * Encourage feedback and continuous improvement
+* Share governance best practices across projects
 
 **Don't:**
 * Implement governance without team input
 * Make standards overly complex or rigid
 * Skip training and documentation
 * Ignore user feedback and pain points
+
+### Project Onboarding
+
+**Do:**
+* Use standardized catalog creation templates
+* Document project-specific governance requirements
+* Set up monitoring and quality gates from day one
+* Establish clear ownership and accountability
+* Plan for project lifecycle (active/archived/decommissioned)
+
+**Don't:**
+* Create project catalogs without governance setup
+* Skip project-specific documentation
+* Delay quality gate implementation
+* Leave project ownership unclear
