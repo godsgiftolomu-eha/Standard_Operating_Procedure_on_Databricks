@@ -4,7 +4,7 @@
 ### Catalog Management
 
 **Do:**
-* Use environment-based catalogs (dev/staging/prod) for clear separation
+* Use environment-based catalog for clear separation
 * Apply consistent naming conventions across all catalogs
 * Document catalog purpose and ownership in comments
 * Regularly review and clean up unused catalogs
