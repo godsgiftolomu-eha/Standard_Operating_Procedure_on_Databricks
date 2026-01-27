@@ -1,5 +1,5 @@
 # Best Practices & Recommendations on Databricks
-![alt text](image-25.png)
+![alt text](images/image-26.png)
 
 ### Catalog Management
 
